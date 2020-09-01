@@ -1,0 +1,190 @@
+#:import NoTransition kivy.uix.screenmanager.NoTransition
+#:import FadeTransition kivy.uix.screenmanager.FadeTransition
+#:import SlideTransition kivy.uix.screenmanager.SlideTransition
+
+<SettingsScreen>:
+    GridLayout:
+        cols: 1
+        FloatLayout:
+            id: background_color_id
+            col: "000000"
+            canvas:
+                Color:
+                    rgb: utils.get_color_from_hex(self.col)
+                Rectangle:
+                    size: self.size
+                    pos: self.pos
+
+            Label:
+                text: "Current Budget:"
+                text_size: self.size
+                font_size: '16'
+                halign: 'left'
+                valign: 'middle'
+                size_hint: 0.8, 0.075
+                pos_hint: {"top": 0.975, "right": 0.9}
+
+            TextInput:
+                id: budget_id
+                size_hint: (0.3, 0.075)
+                pos_hint: {"top": 0.975, "right": 0.9}
+                text: ""
+                text_size: self.size
+                hint_text: ""
+                font_size: 16
+                multiline: False
+                halign: "left"
+                valign: "middle"
+                input_filter: 'int'
+                foreground_color: (0,0,0,1) if self.focus else (1,1,1,1)
+                background_color: (1,1,1,1) if self.focus else (0,0,0,0)
+
+            Button:
+                text: "Update Budget"
+                background_color: 1, 1, 1, .5
+                size_hint: 0.8, 0.1
+                pos_hint: {"top": 0.9, "right": .9}
+                on_release: app.update_budget()
+
+            Label:
+                text: "Display Name:"
+                text_size: self.size
+                font_size: '16'
+                halign: 'left'
+                valign: 'middle'
+                size_hint: 0.8, 0.075
+                pos_hint: {"top": .775, "right":.9}
+
+            TextInput:
+                id: display_id
+                size_hint: (0.35, 0.075)
+                pos_hint: {"top": .775, "right":.9}
+                text: ""
+                text_size: self.size
+                hint_text: ""
+                font_size: 16
+                multiline: False
+                halign: "left"
+                valign: "middle"
+                foreground_color: (0,0,0,1) if self.focus else (1,1,1,1)
+                background_color: (1,1,1,1) if self.focus else (0,0,0,0)
+
+            Button:
+                text: "Update Display Name"
+                background_color: 1, 1, 1, .5
+                size_hint: 0.8, 0.1
+                pos_hint: {"top": .7, "right": .9}
+                on_release: app.update_display_name()
+
+            Label:
+                text: "Background Color:"
+                text_size: self.size
+                font_size: '16'
+                halign: 'left'
+                valign: 'middle'
+                size_hint: 0.8, 0.075
+                pos_hint: {"top": .575, "right":.9}
+
+            TextInput:
+                id: background_color_hint_id
+                size_hint: (0.3, 0.075)
+                pos_hint: {"top": .575, "right":.9}
+                text: ""
+                text_size: self.size
+                hint_text: ""
+                font_size: 16
+                multiline: False
+                halign: "left"
+                valign: "middle"
+                foreground_color: (0,0,0,1) if self.focus else (1,1,1,1)
+                background_color: (1,1,1,1) if self.focus else (0,0,0,0)
+
+            Label:
+                text: "Banner Color:"
+                text_size: self.size
+                font_size: '16'
+                halign: 'left'
+                valign: 'middle'
+                size_hint: 0.8, 0.075
+                pos_hint: {"top": .517, "right":.9}
+
+            TextInput:
+                id: banner_color_hint_id
+                size_hint: (0.3, 0.075)
+                pos_hint: {"top": .517, "right":.9}
+                text: ""
+                text_size: self.size
+                hint_text: ""
+                font_size: 16
+                multiline: False
+                halign: "left"
+                valign: "middle"
+                foreground_color: (0,0,0,1) if self.focus else (1,1,1,1)
+                background_color: (1,1,1,1) if self.focus else (0,0,0,0)
+
+            Label:
+                text: "Dock Color:"
+                text_size: self.size
+                font_size: '16'
+                halign: 'left'
+                valign: 'middle'
+                size_hint: 0.8, 0.075
+                pos_hint: {"top": .459, "right":.9}
+
+            TextInput:
+                id: dock_color_hint_id
+                size_hint: (0.3, 0.075)
+                pos_hint: {"top": .459, "right":.9}
+                text: ""
+                text_size: self.size
+                hint_text: ""
+                font_size: 16
+                multiline: False
+                halign: "left"
+                valign: "middle"
+                foreground_color: (0,0,0,1) if self.focus else (1,1,1,1)
+                background_color: (1,1,1,1) if self.focus else (0,0,0,0)
+
+            Label:
+                text: "Utility Color:"
+                text_size: self.size
+                font_size: '16'
+                halign: 'left'
+                valign: 'middle'
+                size_hint: 0.8, 0.075
+                pos_hint: {"top": .4, "right":.9}
+
+            TextInput:
+                id: utility_color_hint_id
+                size_hint: (0.3, 0.075)
+                pos_hint: {"top": .4, "right":.9}
+                text: ""
+                text_size: self.size
+                hint_text: ""
+                font_size: 16
+                multiline: False
+                halign: "left"
+                valign: "middle"
+                foreground_color: (0,0,0,1) if self.focus else (1,1,1,1)
+                background_color: (1,1,1,1) if self.focus else (0,0,0,0)
+
+            Button:
+                text: "Update Color Scheme"
+                background_color: 1, 1, 1, .5
+                size_hint: 0.8, 0.1
+                pos_hint: {"top": .325, "right": .9}
+                on_release: app.update_color_scheme()
+
+            Label:
+                text: "Hint: Use 6 character 'hex codes'"
+                color: .5, .5, .5, 1
+                font_size: 13
+                size_hint: 0.8, 0.05
+                pos_hint: {"top": .235, "right": .9}
+
+            Button:
+                text: "Log Out"
+                background_color: 1, 1, 1, .5
+                size_hint: 0.8, 0.1
+                pos_hint: {"top": .15, "right": .9}
+                on_release: app.log_out()

@@ -1,0 +1,20 @@
+#:import NoTransition kivy.uix.screenmanager.NoTransition
+#:import FadeTransition kivy.uix.screenmanager.FadeTransition
+#:import SlideTransition kivy.uix.screenmanager.SlideTransition
+
+<CategoryScreen>:
+    FloatLayout:
+        id: background_color_id
+        col: "000000"
+        canvas:
+            Color:
+                rgb: utils.get_color_from_hex(self.col)
+            Rectangle:
+                size: self.size
+                pos: self.pos
+
+        Carousel:
+            #list Expenses by month
+            pos_hint: {"top": .98, "left": 1}
+            size_hint: 1, 1
+            id: expense_categories

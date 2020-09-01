@@ -1,0 +1,23 @@
+#:include kv/expensescreen.kv
+#:include kv/settingsscreen.kv
+#:include kv/addexpensescreen.kv
+#:include kv/categoryscreen.kv
+#:include kv/loginscreen.kv
+#:include kv/connected.kv
+#:import utils kivy.utils
+#:import NoTransition kivy.uix.screenmanager.NoTransition
+#:import FadeTransition kivy.uix.screenmanager.FadeTransition
+#:import SlideTransition kivy.uix.screenmanager.SlideTransition
+#:import StringProperty kivy.properties
+
+FloatLayout:
+    ScreenManager:
+        pos_hint: {"top": 1, "left": 1}
+        size_hint: 1, 1
+        id: screen_manager
+        LoginScreen:
+            name: "login_screen"
+            id: login_screen
+        Connected:
+            name: "connected"
+            id: connected

@@ -1,0 +1,75 @@
+#:import NoTransition kivy.uix.screenmanager.NoTransition
+#:import FadeTransition kivy.uix.screenmanager.FadeTransition
+#:import SlideTransition kivy.uix.screenmanager.SlideTransition
+
+<AddExpenseScreen>:
+    FloatLayout:
+        id: background_color_id
+        col: "000000"
+        canvas.before:
+            Color:
+                rgb: utils.get_color_from_hex(self.col)
+            Rectangle:
+                size: self.size
+                pos: self.pos
+        Label:
+            text: "Select Category"
+            id: select_category_image_label
+            size_hint: 1, .05
+            pos_hint: {"top": .9, "right": 1}
+        ScrollView:
+            size_hint: 1, .1
+            pos_hint: {"top": .8, "right":1}
+            GridLayout:
+                rows: 1
+                size_hint_x: None
+                width: self.minimum_width
+                col_default_width: '60'
+                col_force_default: True
+                id: add_category_grid
+        TextInput:
+            #text: "15.92"
+            hint_text: "Enter price"
+            id: add_price_id
+            size_hint: .8, .1
+            pos_hint: {"top": .6, "right":.9}
+            on_text: self.background_color = (1,1,1,1)
+            on_text: app.clear_expense()
+        TextInput:
+            hint_text: "MM"
+            id: month_input_id
+            size_hint: .2, .1
+            pos_hint: {"top": .4, "right":.3}
+            on_text: self.background_color = (1,1,1,1)
+            on_text: app.clear_expense()
+        TextInput:
+            hint_text: "DD"
+            id: day_input_id
+            size_hint: .2, .1
+            pos_hint: {"top": .4, "right":.6}
+            on_text: self.background_color = (1,1,1,1)
+            on_text: app.clear_expense()
+        TextInput:
+            hint_text: "YY"
+            id: year_input_id
+            size_hint: .2, .1
+            pos_hint: {"top": .4, "right":.9}
+            on_text: self.background_color = (1,1,1,1)
+            on_text: app.clear_expense()
+
+
+        Label:
+            color: 0.7, 0.7, 0.7, 1
+            id: add_expense_id
+            size_hint: .8, .1
+            pos_hint: {"top": .1, "right":.9}
+
+
+        Button:
+            text: "Add Expense"
+            size_hint: .8, .1
+            background_color: 1, 1, 1, .5
+            pos_hint: {"top": .2, "right":.9}
+            on_release:
+                app.add_expense()
+                #app.change_screen("expense_screen",SlideTransition(direction='up', duration=.15))

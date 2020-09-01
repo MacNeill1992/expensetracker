@@ -1,0 +1,43 @@
+#:import NoTransition kivy.uix.screenmanager.NoTransition
+#:import FadeTransition kivy.uix.screenmanager.FadeTransition
+#:import SlideTransition kivy.uix.screenmanager.SlideTransition
+
+<LoginScreen>:
+    canvas:
+        Rectangle:
+            #size: (630,1000)
+            size: self.size
+            pos: self.pos
+            source: "JPG/DCS_2566w.jpg"
+    FloatLayout:
+        Label:
+            text: "Simple Expense Tracker"
+            color: (0, 0, 0, 1)
+            size_hint: .8, .1
+            pos_hint: {"top": 1, "right": .9}
+        TextInput:
+            id: login_email
+            hint_text: "email"
+            multiline: False
+            size_hint: 0.8, 0.07
+            pos_hint: {"top": .9, "right": .9}
+        TextInput:
+            id: login_password
+            password: True
+            hint_text: "password"
+            multiline: False
+            size_hint: 0.8, 0.07
+            pos_hint: {"top": .8, "right": .9}
+        Label:
+            id: login_message
+            color: (1, 0, 0, 1)
+            size_hint: .8, .1
+            pos_hint: {"top": .4, "right": .9}
+        Button:
+            background_color: 1, 1, 1, .5
+            text: "[u]Sign In/Up[/u]"
+            markup: True
+            size_hint: .5, .07
+            pos_hint: {"top": .15, "right": .75}
+            on_release:
+                app.my_firebase.sign_up(login_email.text, login_password.text)

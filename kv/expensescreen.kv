@@ -1,0 +1,21 @@
+#:import utils kivy.utils
+
+<ExpenseScreen>:
+    FloatLayout:
+        id: background_color_id
+        col: "000000"
+        canvas:
+            Color:
+                rgb: utils.get_color_from_hex(self.col)
+            Rectangle:
+                #size: (630,1000)
+                size: self.size
+                pos: self.pos
+                #source: "JPG/DCS_2566w.jpg"
+
+        Carousel:
+            #list Expenses by month
+            pos_hint: {"top": .98, "left": 1}
+            size_hint: 1, 1
+            id: expense_months
+

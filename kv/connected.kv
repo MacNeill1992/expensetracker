@@ -1,0 +1,102 @@
+#:import utils kivy.utils
+#:import NoTransition kivy.uix.screenmanager.NoTransition
+#:import FadeTransition kivy.uix.screenmanager.FadeTransition
+#:import SlideTransition kivy.uix.screenmanager.SlideTransition
+#:import StringProperty kivy.properties
+
+<Connected>:
+    GridLayout:
+        cols: 1
+        FloatLayout:
+            RelativeLayout:
+                id: banner_color_id
+                col: '000000'
+                canvas:
+                    Color:
+                        rgb: utils.get_color_from_hex(self.col)
+                    Rectangle:
+                        size: self.size
+                rows: 1
+                pos_hint: {"top": 1, "left": 1}
+                size_hint: 1, .075
+                Label:
+                    text_size: self.size
+                    multiline: 'False'
+                    font_size: '18'
+                    padding_x: '5'
+                    halign: 'left'
+                    valign: 'middle'
+                    text: ""
+                    id: main_header
+
+                #settings screen
+                ImageButton:
+                    text_size: self.size
+                    size_hint: .5, .5
+                    pos_hint: {"top": .9, "x": .7}
+                    source: "icons/cog-outline.png"
+                    on_press:
+                        self.source = "icons/cog-outline-dark.png"
+                    on_release:
+                        self.source = "icons/cog-outline.png"
+                        app.change_screen("settings_screen", SlideTransition(direction='down',duration=0.15))
+
+            ScreenManager:
+                pos_hint: {"top": .925, "left": 1}
+                size_hint: 1, .825
+                id: screen_manager
+                ExpenseScreen:
+                    name: "expense_screen"
+                    id: expense_screen
+                AddExpenseScreen:
+                    name: "add_expense_screen"
+                    id: add_expense_screen
+                CategoryScreen:
+                    name: "category_screen"
+                    id: category_screen
+                SettingsScreen:
+                    name: "settings_screen"
+                    id: settings_screen
+
+            GridLayout:
+                id: dock_color_id
+                col: '000000'
+                canvas:
+                    Color:
+                        rgb: utils.get_color_from_hex(self.col)
+                    Rectangle:
+                        size: self.size
+                        pos: self.pos
+                rows: 1
+                pos_hint: {"top": .1, "right": 1}
+                size_hint: 1, .1
+                padding: 8
+
+                #expense by month screen
+                ImageButton:
+                    source: "icons/format-list-bulleted.png"
+                    on_press:
+                        self.source = "icons/format-list-bulleted-dark.png"
+                    on_release:
+                        self.source = "icons/format-list-bulleted.png"
+                        app.expense_by_month()
+                        app.change_screen("expense_screen", SlideTransition(direction='left',duration=0.15))
+
+                #add expense screen
+                ImageButton:
+                    source: "icons/cart-plus.png"
+                    on_press:
+                        self.source = "icons/cart-plus-dark.png"
+                    on_release:
+                        self.source = "icons/cart-plus.png"
+                        app.change_screen("add_expense_screen", SlideTransition(direction='up',duration=0.15))
+
+                #expense by category screen
+                ImageButton:
+                    source: "icons/poll.png"
+                    on_press:
+                        self.source = "icons/poll-dark.png"
+                    on_release:
+                        self.source = "icons/poll.png"
+                        app.expense_by_category()
+                        app.change_screen("category_screen", SlideTransition(direction='left',duration=0.15))
