@@ -24,10 +24,6 @@
   <component name="ChangeListManager">
     <list default="true" id="e300fa1a-948c-47e3-8232-63bef925bf01" name="Default Changelist" comment="building it back up-008">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/expense_by_category.py" beforeDir="false" afterPath="$PROJECT_DIR$/expense_by_category.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/expense_by_month.py" beforeDir="false" afterPath="$PROJECT_DIR$/expense_by_month.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/kv/addexpensescreen.kv" beforeDir="false" afterPath="$PROJECT_DIR$/kv/addexpensescreen.kv" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/kv/connected.kv" beforeDir="false" afterPath="$PROJECT_DIR$/kv/connected.kv" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/kv/settingsscreen.kv" beforeDir="false" afterPath="$PROJECT_DIR$/kv/settingsscreen.kv" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -260,7 +256,14 @@
       <option name="project" value="LOCAL" />
       <updated>1599017548961</updated>
     </task>
-    <option name="localTasksCounter" value="17" />
+    <task id="LOCAL-00017" summary="building it back up-008">
+      <created>1599018687735</created>
+      <option name="number" value="00017" />
+      <option name="presentableId" value="LOCAL-00017" />
+      <option name="project" value="LOCAL" />
+      <updated>1599018687735</updated>
+    </task>
+    <option name="localTasksCounter" value="18" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -379,11 +382,11 @@
     <state x="2405" y="183" key="SettingsEditor/0.0.1536.824/1920.0.1920.1040@1920.0.1920.1040" timestamp="1595797692342" />
     <state x="183" y="38" key="SettingsEditor/0.0.1536.824@0.0.1536.824" timestamp="1595789024061" />
     <state x="2405" y="183" key="SettingsEditor/0.0.1920.1040/1920.0.1920.1040@1920.0.1920.1040" timestamp="1598891376376" />
-    <state x="552" y="253" key="Vcs.Push.Dialog.v2" timestamp="1599017581105">
+    <state x="552" y="253" key="Vcs.Push.Dialog.v2" timestamp="1599018713817">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state x="2472" y="253" key="Vcs.Push.Dialog.v2/0.0.1920.1040/1920.0.1920.1040@1920.0.1920.1040" timestamp="1599010055555" />
-    <state x="552" y="253" key="Vcs.Push.Dialog.v2/0.0.1920.1040@0.0.1920.1040" timestamp="1599017581105" />
+    <state x="552" y="253" key="Vcs.Push.Dialog.v2/0.0.1920.1040@0.0.1920.1040" timestamp="1599018713817" />
     <state x="777" y="434" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2" timestamp="1599012880601">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
