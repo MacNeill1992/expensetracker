@@ -63,6 +63,7 @@ class MyFirebase():
             error_message = error_data["error"]['message']
             app.root.ids['login_screen'].ids['login_message'].text = "EMAIL EXISTS - " + error_message.replace("_", " ")
 
+
     def exchange_refresh_token(self, refresh_token):
         refresh_url = "https://securetoken.googleapis.com/v1/token?key=" + self.wak
         refresh_payload = '{"grant_type": "refresh_token", "refresh_token": "%s"}' % refresh_token
