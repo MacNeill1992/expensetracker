@@ -353,7 +353,7 @@ class MainApp(App):
         self.root.ids.login_screen.ids.login_password.text = ""
 
 
-
+###################DEL###################3
     def change_screen(self, screen_name):
         screen_manager = self.root.ids['screen_manager']
         screen_manager.current = screen_name
@@ -361,6 +361,9 @@ class MainApp(App):
     def connected_change_screen(self, screen_name):
         screen_manager = self.root.ids['connected'].ids['connected_screen_manager']
         screen_manager.current = screen_name
+##################DEL####################
 
-MainApp().run()
+
+if __name__ == "main":
+    MainApp().run()
 
