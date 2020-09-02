@@ -24,6 +24,7 @@ class Connected(Screen):
 
 GUI = Builder.load_file("main.kv")
 class MainApp(App):
+
     user_id = 1
     category_image = None
     category_image_widget = ''
