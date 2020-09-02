@@ -23,14 +23,16 @@ class Connected(Screen):
 
 
 GUI = Builder.load_file("main.kv")
-# LOGIN = Builder.load_file("loginscreen.kv")
-
 class MainApp(App):
+    user_id = 1
+    category_image = None
+    category_image_widget = ''
+    previous_category_image_widget = None
+    refresh_token_file = "refresh_token.txt"
 
     def build(self):
         self.my_firebase = MyFirebase()
         return GUI
-
 
     def on_start(self):
 
