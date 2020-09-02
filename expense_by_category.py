@@ -25,12 +25,12 @@ class ExpenseByCategory(GridLayout):
         pTotal = 0
         user_budget = data['budget']
 
-        title = Label(text=date, text_size=(None, 100), size_hint=(1, 0.125), pos_hint={"top": 1, "right": 1},
-                      font_size=20, valign='middle')
+        title = Label(text=date, text_size=(None, 1000), size_hint=(1, 0.125), pos_hint={"top": 1, "right": 1},
+                      font_size='20 dp', valign='middle')
         SV = ScrollView(size_hint=(1, 0.85), pos_hint={"top": .85,
                                                        "right": 1})  # Set spacing 2 (1,2) to change the vertical spacing between rows
         GL = GridLayout(cols=1, size_hint_y=None, height=self.minimum_height, spacing=(0, 10),
-                        row_default_height=40, row_force_default=True)
+                        row_default_height='40 dp', row_force_default=True)
         GL.bind(minimum_height=GL.setter('height'))
 
         # for icon in expense folder.
@@ -61,7 +61,7 @@ class ExpenseByCategory(GridLayout):
             expenseFloat.add_widget(Label(text=x, text_size=self.size, size_hint=(.5, 1),
                                           pos_hint={"x": .125, "y": 1}, halign='left'))
             expenseFloat.add_widget(Label(text=p, text_size=(self.width, None), size_hint=(.3, 1),
-                                          pos_hint={"x": .6, "top": 1.1}, halign='right', font_size=18))
+                                          pos_hint={"x": .6, "top": 1.1}, halign='right', font_size='18 dp'))
 
             GL.add_widget(expenseFloat)
 
@@ -80,14 +80,14 @@ class ExpenseByCategory(GridLayout):
 
         total_float = PyCanvas.pythoncanvas(data['colorscheme']['utility_color'])
 
-        l1 = Label(text_size=self.size, text="Monthly Total: ", pos_hint={"top": 1.6, "right": 1}, font_size='14',
-                   halign='left', padding_x='5')
+        l1 = Label(text_size=self.size, text="Monthly Total: ", pos_hint={"top": 1.6, "right": 1}, font_size='14 dp',
+                   halign='left', padding_x='5 dp')
         l1.bind(size=l1.setter('text_size'))
-        l2 = Label(text_size=self.size, pos_hint={"top": 1.55, "right": .96}, font_size='18', halign='right',
-                   padding_x='5', id='monthly_total', text="$ " + strTotal)
+        l2 = Label(text_size=self.size, pos_hint={"top": 1.55, "right": .96}, font_size='18 dp', halign='right',
+                   padding_x='5 dp', id='monthly_total', text="$ " + strTotal)
         l2.bind(size=l2.setter('text_size'))
-        l3 = Label(text_size=self.size, color=(0.5, 0.5, 0.5, 1), pos_hint={"top": 1.3, "right": 1}, font_size='12',
-                   halign='left', padding_x='5', id='budget_percent', text=over_under)
+        l3 = Label(text_size=self.size, color=(0.5, 0.5, 0.5, 1), pos_hint={"top": 1.3, "right": 1}, font_size='12 dp',
+                   halign='left', padding_x='5 dp', id='budget_percent', text=over_under)
         l3.bind(size=l3.setter('text_size'))
 
         total_float.add_widget(l1)
