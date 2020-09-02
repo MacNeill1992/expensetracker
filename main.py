@@ -1,4 +1,3 @@
-import sys
 from kivy.app import App
 from kivy.lang import Builder
 from kivy.uix.screenmanager import Screen, ScreenManager
@@ -9,7 +8,6 @@ import traceback
 import requests
 # Config.set('graphics', 'width', '500')
 # Config.set('graphics', 'height', '850')
-#GITHUB SUCCESS
 
 class LoginScreen(Screen):
     pass
