@@ -184,7 +184,11 @@ class MainApp(App):
         result = requests.get("https://expensetracker-d3a98.firebaseio.com/" + self.local_id + ".json?auth=" + self.id_token)
         data = json.loads(result.content.decode())
         expense_months = self.root.ids['connected'].ids['expense_screen'].ids['expense_months']
-        expense_months.clear_widgets()
+
+        if len(expense_months.slides):
+            expense_months.index = 0
+            expense_months.clear_widgets()
+
         months = data['expenses']
         if months != "":
             for month in months:
@@ -197,7 +201,11 @@ class MainApp(App):
             "https://expensetracker-d3a98.firebaseio.com/" + self.local_id + ".json?auth=" + self.id_token)
         data = json.loads(result.content.decode())
         expense_category = self.root.ids['connected'].ids['category_screen'].ids['expense_categories']
-        expense_category.clear_widgets()
+
+        if len(expense_category.slides):
+            expense_category.index = 0
+            expense_category.clear_widgets()
+
         months = data['expenses']
         if months != "":
             for month in months:
