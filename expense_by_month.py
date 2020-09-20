@@ -72,7 +72,7 @@ class ExpenseByMonth(GridLayout):
         total_float = PyCanvas.pythoncanvas(data['colorscheme']['utility_color'])
 
 
-        l1 = Label(text_size=self.size, text="Monthly Total: ", pos_hint={"top": 1.6, "right": 1}, font_size='14',
+        l1 = Label(text_size=self.size, text="Monthly Total: ", pos_hint={"top": 1.6, "right": 1}, font_size='14 dp',
                    halign='left', padding_x='5 dp')
         l1.bind(size=l1.setter('text_size'))
         l2 = Label(text_size=self.size, pos_hint={"top": 1.55, "right": .96}, font_size='18 dp', halign='right',

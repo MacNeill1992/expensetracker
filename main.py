@@ -16,8 +16,8 @@ from kivy.properties import StringProperty
 from myfirebase import MyFirebase
 import traceback
 from os import walk
-# Config.set('graphics', 'width', '260')
-# Config.set('graphics', 'height', '480')
+Config.set('graphics', 'width', '300')
+Config.set('graphics', 'height', '600')
 import requests
 import json
 from functools import partial
