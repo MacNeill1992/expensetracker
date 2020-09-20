@@ -194,7 +194,7 @@ class MainApp(App):
             for month in months:
                 N = ExpenseByMonth(month, data)
                 expense_months.add_widget(N)
-            # expense_months.load_slide(N)
+            expense_months.load_slide(N)
 
     def expense_by_category(self):
         result = requests.get(
@@ -211,7 +211,7 @@ class MainApp(App):
             for month in months:
                 N = ExpenseByCategory(month, data)
                 expense_category.add_widget(N)
-            # expense_category.load_slide(N)
+            expense_category.load_slide(N)
 
     def add_expense_icons(self):
         category_image_grid = self.root.ids['connected'].ids['add_expense_screen'].ids['add_category_grid']
