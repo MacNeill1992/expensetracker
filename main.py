@@ -344,5 +344,5 @@ class MainApp(App):
         self.root.ids.login_screen.ids.login_email.text = ""
         self.root.ids.login_screen.ids.login_password.text = ""
 
-
+print("STARTINGGGGGGG")
 MainApp().run()
