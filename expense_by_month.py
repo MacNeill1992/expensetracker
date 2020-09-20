@@ -8,7 +8,7 @@ from kivy.graphics.instructions import Canvas
 # from kivy.graphics.instructions import CanvasBase
 from kivy.graphics import Color, Rectangle
 import PyCanvas
-
+from os import walk
 
 # Creating the scrollview which will go inside our carousel
 class ExpenseByMonth(GridLayout):
@@ -25,7 +25,7 @@ class ExpenseByMonth(GridLayout):
         pTotal = 0
         user_budget = data['budget']
 
-        title = Label(text=date, text_size=(None, 1000), size_hint=(1, 0.125), pos_hint={"top": 1, "right": 1},
+        title = Label(text=date, text_size=(None, 10000), size_hint=(1, 0.125), pos_hint={"top": 1, "right": 1},
                       font_size='20 dp', valign='middle')
         SV = ScrollView(size_hint=(1, 0.85), pos_hint={"top": .85,
                                                        "right": 1})  # Set spacing 2 (1,2) to change the vertical spacing between rows
@@ -38,8 +38,7 @@ class ExpenseByMonth(GridLayout):
             x = str(expense['category'])
             e = datetime.strptime(str(expense['date']), '%Y%m%d')
             d = e.strftime('%b %d')
-            i = 'icons/expenses/' + x + '.png'
-
+            i = 'icons/expenses/' + x.lower() + '.png'
             pNum = expense['price']
             pFloat = '%.2f' % pNum
             p = '$ ' + pFloat
@@ -90,3 +89,10 @@ class ExpenseByMonth(GridLayout):
         self.add_widget(title)
         self.add_widget(SV)
         self.add_widget(total_float)
+
+
+
+
+
+
+

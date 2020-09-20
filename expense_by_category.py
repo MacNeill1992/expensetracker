@@ -33,11 +33,6 @@ class ExpenseByCategory(GridLayout):
                         row_default_height='40 dp', row_force_default=True)
         GL.bind(minimum_height=GL.setter('height'))
 
-        # for icon in expense folder.
-        #       for entry in expense month
-        #               if category name == icon. price += price info fro firebase
-        #       post to gridview
-
         category_dict = {}
         for i in range(len(ordered)):
             category_name = ordered[i][1]['category']
@@ -54,7 +49,6 @@ class ExpenseByCategory(GridLayout):
             pFloat = '%.2f' % pNum
             p = '$ ' + pFloat
             pTotal += pNum
-
             # widgets
             expenseFloat = FloatLayout(size=self.size)
             expenseFloat.add_widget(Image(source=i, size_hint=(.12, 1), pos_hint={"x": .04, "y": 0}))
